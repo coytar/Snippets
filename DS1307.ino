@@ -23,7 +23,8 @@ char szLine1[16], szLine2[16];
 
 void setup() {
 	lcd.begin(16, 2);
-    Wire.begin();
+    	Wire.begin();
+    	// To set the current time, set the time in lines 11-18 and then enable the following line. Do it once and then disable it.
 	//write_initial_time();
 }
 
