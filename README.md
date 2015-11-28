@@ -1,1 +1,1 @@
-Refer to https://coytar.wordpress.com/
+Refer to http://coytar.wordpress.com/
