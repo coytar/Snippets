@@ -1,3 +1,1 @@
-# Snippets
-
-Arduino examples.
+Refer to https://coytar.wordpress.com/
