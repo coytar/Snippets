@@ -1,0 +1,32 @@
+// Binary Counter
+// To be used with Mojo V3 board. Counts in binary using the onboard LEDs.
+
+module binarycounter (
+    input clk,    // clock
+    input rst,    // reset
+    output blink,  // output to LED
+    output led [8]
+  ) {
+
+  .clk(clk){
+     .rst(rst) {
+      dff counter[25];
+      dff counter2[8];
+    }
+    
+    edge_detector edge_detector(#RISE(1), #FALL(0)); // detect rising edges
+  }
+
+  always {
+    blink = counter.q[24];
+    edge_detector.in = counter.q[24]; // input to the edge_detector
+    
+    if (edge_detector.out) {     // if edge detected
+      counter2.d = counter2.q + 1;    
+    }      
+    
+    led = counter2.q;
+
+    counter.d = counter.q + 1;
+  }
+}
